@@ -1,0 +1,13 @@
+June
+The number of rainny days: 5
+The number of cloudy days: 23
+The number of sunny days: 2
+July
+The number of rainny days: 8
+The number of cloudy days: 20
+The number of sunny days: 2
+August
+The number of rainny days: 7
+The number of cloudy days: 21
+The number of sunny days: 2
+The month had the largest number of rainy days: July
