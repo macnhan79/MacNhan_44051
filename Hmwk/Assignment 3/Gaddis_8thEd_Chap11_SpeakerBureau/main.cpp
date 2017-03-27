@@ -19,7 +19,6 @@ void displayData(Speaker *);
 void changeData(Speaker *);
 void inputAnSpeaker(Speaker &);
 void callMenu(Speaker *);
-
 const int SIZE = 10;
 
 int main(int argc, char** argv) {

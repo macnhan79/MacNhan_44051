@@ -24,22 +24,7 @@ const int SIZE = 12;
 
 int main(int argc, char** argv) {
     CustomerAccount *c = new CustomerAccount[SIZE];
-    for (int i = 0; i < 12; i++) {
-        c[i].accountBalance = 0.0f + i;
-        c[i].address = "test";
-        c[i].city = "test";
-        c[i].dateLastPayment = "test";
-        c[i].name = "test";
-        c[i].state = "test";
-        c[i].telephoneNumber = "test";
-        c[i].zip = i;
-    }
     callMenu(c);
-
-
-
-
-
     return 0;
 }
 
