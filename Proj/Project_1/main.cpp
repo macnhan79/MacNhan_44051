@@ -51,30 +51,6 @@ int main(int argc, char** argv) {
     /* initialize random seed: */
     srand(time(NULL));
     int level = 1;
-
-    //    Scores score[5];
-    //    score[0].name = "Nhan";
-    //    score[0].rank = 1;
-    //    score[0].scores = 10;
-    //    score[1].name = "Thanh";
-    //    score[1].rank = 2;
-    //    score[1].scores = 8;
-    //    score[2].name = "Mac";
-    //    score[2].rank = 3;
-    //    score[2].scores = 5;
-    //    score[3].name = "John";
-    //    score[3].rank = 4;
-    //    score[3].scores = 2;
-    //    score[4].name = "David";
-    //    score[4].rank = 5;
-    //    score[4].scores = 2;
-    //    fstream file;
-    //    file.open("Scores.dat", ios::out | ios::binary);
-    //    for (int i = 0; i < 5; i++) {
-    //        file.write(reinterpret_cast<char *> (&score[i]), sizeof (score[i]));
-    //    }
-    //    file.close();
-
     callMainMenu(level);
     return 0;
 }
@@ -86,11 +62,16 @@ int main(int argc, char** argv) {
  * \return none
  */
 void startGame(int level) {
+    //init total score from beginning
     int totalScores = 0;
     bool isGameOver = false;
+    //loop number of level
     for (int i = 0; i < NUMBER_OF_LEVEL; i++) {
+        //loop round for each level
         for (int j = 1; j <= ROUND_EACH_LEVEL * level; j++) {
+            //create operator-->input from player-->count time
             int time = generationOperation(level);
+            //if time  < 0 --> game over
             if (time >= 0) {
                 totalScores += countScores(time);
             } else {
@@ -99,9 +80,11 @@ void startGame(int level) {
                 break;
             }
         }
+        //game over
         if (isGameOver) {
             break;
         }
+        //passed level
         cout << "Congratulation! You passed level " << level << "." << endl;
         level++;
         cin.ignore();
@@ -111,13 +94,15 @@ void startGame(int level) {
     Scores score;
     string name;
     score.scores = totalScores;
+    //game over
     if (isGameOver) {
+        //print info
         cout << "GAME OVER!" << endl;
         cout << "Your scores: " << totalScores << endl;
         cout << "Enter your name: ";
         cin >> name;
         score.name = name;
-        //write score to file
+        //save score to file
         save(FILE_NAME, score, SIZE_SCORE_TO_FILE);
         cout << "Press [Enter] to play again.";
         cin.ignore();
@@ -125,6 +110,7 @@ void startGame(int level) {
         level = 1;
         callMainMenu(level);
     } else {
+        //complete game
         cout << "Congratulation! You won!" << endl;
         cout << "Your scores: " << totalScores << endl;
         cout << "Enter your name: ";
@@ -146,6 +132,7 @@ void startGame(int level) {
  */
 int countScores(int time) {
     for (int i = 0; i < SIZE_TIME_SCORES; i++) {
+        //SCORE_TIME[i][0] description [time][point]
         if (SCORE_TIME[i][0] == time)
             return SCORE_TIME[i][1];
     }
@@ -159,10 +146,13 @@ int countScores(int time) {
  */
 int calcTime(int &result) {
     time_t start, end;
+    //current time start
     time(&start);
     cinValidNumber(result);
+    //current time end
     time(&end);
-    double dif = difftime(end, start);
+    //different time
+    int dif = difftime(end, start);
     return dif;
 }
 
@@ -174,6 +164,7 @@ int calcTime(int &result) {
  */
 int getRandomNumber(int min, int max) {
     int number;
+    //random number in range [min-max]
     number = (rand() % (max - min + 1)) + min; // 
     return number;
 }
@@ -193,6 +184,7 @@ char getRandomOperations() {
  */
 bool checkPrimeNumber(int number) {
     bool isPrime = true;
+    //loop to number/2
     for (int i = 2; i < number / 2; i++) {
         if (number % i == 0) {
             isPrime = false;
@@ -229,34 +221,45 @@ int generationOperation(int level) {
     int result;
     int time;
     switch (oper) {
+            //if operator is +
         case '+':
+            //print result;
             cout << number1 << " + " << number2 << " = ";
+            //count time
             time = calcTime(result);
+            //check result
             if (result == (number1 + number2))
                 return time;
             else
                 return -1;
             break;
+            //if operator is -
         case '-':
-            //int result;
+            //print result;
             cout << number1 << " - " << number2 << " = ";
+            //count time
             time = calcTime(result);
+            //check result
             if (result == (number1 - number2))
                 return time;
             else
                 return -1;
             break;
+            //if operator is *
         case '*':
-            // int result;
+            // print result;
             cout << number1 << " x " << number2 << " = ";
+            //count time
             time = calcTime(result);
+            //check result
             if (result == (number1 * number2))
                 return time;
             else
                 return -1;
             break;
+            //if operator is /
         case '/':
-            //find number2 while it not a zero
+            //find number2 while it not a zero based-on level
             if (number2 == 0) {
                 if (level == 3) {
                     do {
@@ -269,12 +272,7 @@ int generationOperation(int level) {
                 }
             }
             if (number1 % number2 != 0) {
-                if (level == 3) {
-                    //create number 1 is not a prime number
-                    do {
-                        number1 = getRandomNumber(0, 99);
-                    } while (!checkPrimeNumber(number1) || number1 % number2 != 0);
-                } else if (level == 2) {
+                if (level == 3 || level == 2) {
                     //create number 1 is not a prime number
                     do {
                         number1 = getRandomNumber(0, 99);
@@ -286,7 +284,6 @@ int generationOperation(int level) {
                     } while (!checkPrimeNumber(number1) || number1 % number2 != 0);
                 }
             }
-            // int result;
             cout << number1 << " / " << number2 << " = ";
             time = calcTime(result);
             if (result == (number1 / number2))
@@ -296,6 +293,7 @@ int generationOperation(int level) {
             break;
     }
 }
+
 /*!
  * \brief Create a menu for choosing
  * 1. Start game
@@ -306,7 +304,9 @@ int generationOperation(int level) {
  */
 void callMainMenu(int level) {
     int choice = -1;
+    //loop while choice is correct
     do {
+        //print list of choice
         do {
             cout << "1. Start game." << endl;
             cout << "2. Show high scores." << endl;
@@ -315,11 +315,12 @@ void callMainMenu(int level) {
         } while (!cinValidNumber(choice));
     } while (choice < 1 || choice > 3);
     switch (choice) {
-
+        //if choice == 1 --> start game
         case 1:
             startGame(level);
             break;
         case 2:
+            //choice == 2 --> print the high score
             printScoreFromFile(FILE_NAME, SIZE_SCORE_TO_FILE);
             cin.ignore();
             cout << "Press [Enter] to continue...";
@@ -336,6 +337,7 @@ void callMainMenu(int level) {
             callMainMenu(level);
     }
 }
+
 /*!
  * \brief Save the high score to file. The function will get the scores
  * that are stored in file and check the current score. If the current score is
@@ -347,19 +349,27 @@ void callMainMenu(int level) {
  * \return none
  */
 void save(string fileName, Scores score, const int size = 5) {
+    //create a array to store high score
     Scores *sFile = new Scores[size];
     fstream in;
+    //open document
     in.open("Scores.dat", ios::in | ios::binary);
+    //read the first element
     in.read(reinterpret_cast<char *> (&sFile[0]), sizeof (sFile[0]));
     int i = 1;
+    //loop to end file && < size
     while (!in.eof() && i < size) {
+        //read next element
         in.read(reinterpret_cast<char *> (&sFile[i]), sizeof (sFile[i]));
         i++;
     }
     bool isChange = false;
     Scores temp;
+    //loop to each element high score
     for (int j = 0; j < size; j++) {
+        //check if have new high score
         if (!isChange) {
+            //current score < new score
             if (sFile[j].scores < score.scores) {
                 score.rank = sFile[j].rank;
                 temp = sFile[j];
@@ -386,6 +396,7 @@ void save(string fileName, Scores score, const int size = 5) {
     delete []sFile;
     //printScoreFromFile(fileName, SIZE_SCORE_TO_FILE);
 }
+
 /*!
  * \brief Printing the high score that stored in file.
  * \param fileName the name of file stores the high score
@@ -404,10 +415,8 @@ void printScoreFromFile(string fileName, const int size = 5) {
         file.read(reinterpret_cast<char *> (&score), sizeof (score));
     }
     file.close();
-    //    cout << "Press [Enter] to continue...";
-    //    cin.ignore();
-    //    cin.get();
 }
+
 /*!
  * \brief Checking the input from user. Only check integer data type.
  * \param number store the input from user
@@ -426,4 +435,3 @@ bool cinValidNumber(int &number) {
     }
     return isCorrect;
 }
-
