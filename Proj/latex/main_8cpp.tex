@@ -1,0 +1,334 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Calculation Game.  
+
+
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Scores.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ab79ddeff88572509e29cdbb53f44513c}{calc\+Time} (int \&result)
+\begin{DoxyCompactList}\small\item\em Get time in second from begin input to end input. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a90af5f9e863cf3585d8ed4c9db2430be}{call\+Main\+Menu} (int level)
+\begin{DoxyCompactList}\small\item\em Create a menu for choosing. \end{DoxyCompactList}\item 
+bool \hyperlink{main_8cpp_a786b5791dd8654700760b141e6e1f8cd}{cin\+Valid\+Number} (int \&number)
+\begin{DoxyCompactList}\small\item\em Checking the input from user. Only check integer data type. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_af7bea7d5c8396af5f65b9505cfa9ad6c}{get\+Random\+Number} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Create a random number in range. \end{DoxyCompactList}\item 
+char \hyperlink{main_8cpp_a63701da917ff4092541dd0054336c1f8}{get\+Random\+Operations} ()
+\begin{DoxyCompactList}\small\item\em Get a random operator from array char O\+P\+E\+R\+A\+T\+O\+RS\mbox{[}4\mbox{]} = \{\textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}\}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a154f4813e0aef592577bdf7a17d9e574}{generation\+Operation} (int level)
+\begin{DoxyCompactList}\small\item\em Create a Mathematical operation, receive the input from user, calculate the time, and check the result from input of user. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a036f38352ddc56207c1a0e198071cf04}{start\+Game} (int level)
+\begin{DoxyCompactList}\small\item\em start\+Game function is a function will execute the game and print the result of game when user win or lose the game \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a642965152f937b2dde70b0419be7bcdf}{save} (string file\+Name, \hyperlink{struct_scores}{Scores} score, const int size=5)
+\begin{DoxyCompactList}\small\item\em Save the high score to file. The function will get the scores that are stored in file and check the current score. If the current score is greater than the other scores in file. The function will insert the current score and store those to file. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_aa9e2f4fa572de7c33b9f5827c8df80d9}{print\+Score\+From\+File} (string file\+Name, const int size=5)
+\begin{DoxyCompactList}\small\item\em Printing the high score that stored in file. \end{DoxyCompactList}\item 
+bool \hyperlink{main_8cpp_aa71e09c066a6e1173d1d4825faf26dd7}{check\+Prime\+Number} (int number)
+\begin{DoxyCompactList}\small\item\em Checking a number is a prime number or not. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a6317ba9d7cf2637f0bdd8bee612d1ff9}{count\+Scores} (int time)
+\begin{DoxyCompactList}\small\item\em return the points for user depend on the time user enter their result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{main_8cpp_a6a0126712073a760a113eb6bf609a101}{O\+P\+E\+R\+A\+T\+O\+RS} \mbox{[}4\mbox{]} = \{\textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}\}
+\item 
+const int \hyperlink{main_8cpp_a5419937581bd24dcb4b1389600d6545c}{N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL} = 3
+\item 
+const int \hyperlink{main_8cpp_af57e50e3cf2cfbab4159f73ea5529bc7}{R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL} = 10
+\item 
+const int \hyperlink{main_8cpp_a457a39c21d264e910760e1661c524c41}{S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE} = 5
+\item 
+const string \hyperlink{main_8cpp_a890e4d32b647f2b9a858c89daf7cc89f}{F\+I\+L\+E\+\_\+\+N\+A\+ME} = \char`\"{}Scores.\+dat\char`\"{}
+\item 
+const int \hyperlink{main_8cpp_a85099db1e9276ead960f23d9255a3a4b}{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES} = 5
+\item 
+const int \hyperlink{main_8cpp_a932e57f367ea7a341192a5c6a9fa546a}{S\+C\+O\+R\+E\+\_\+\+T\+I\+ME} \mbox{[}\hyperlink{main_8cpp_a85099db1e9276ead960f23d9255a3a4b}{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES}\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculation Game. 
+
+Nhan Mac \begin{DoxyDate}{Date}
+April, 2017 Calculation Game is a game that measure how long a gamer can calculation math 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ab79ddeff88572509e29cdbb53f44513c}\label{main_8cpp_ab79ddeff88572509e29cdbb53f44513c}} 
+\index{main.\+cpp@{main.\+cpp}!calc\+Time@{calc\+Time}}
+\index{calc\+Time@{calc\+Time}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{calc\+Time()}{calcTime()}}
+{\footnotesize\ttfamily int calc\+Time (\begin{DoxyParamCaption}\item[{int \&}]{result }\end{DoxyParamCaption})}
+
+
+
+Get time in second from begin input to end input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & the value from input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the time in second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a90af5f9e863cf3585d8ed4c9db2430be}\label{main_8cpp_a90af5f9e863cf3585d8ed4c9db2430be}} 
+\index{main.\+cpp@{main.\+cpp}!call\+Main\+Menu@{call\+Main\+Menu}}
+\index{call\+Main\+Menu@{call\+Main\+Menu}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{call\+Main\+Menu()}{callMainMenu()}}
+{\footnotesize\ttfamily void call\+Main\+Menu (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Create a menu for choosing. 
+
+
+\begin{DoxyEnumerate}
+\item Start game
+\item Show high score
+\item Exit 
+\begin{DoxyParams}{Parameters}
+{\em level} & the level of game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}\mbox{\Hypertarget{main_8cpp_aa71e09c066a6e1173d1d4825faf26dd7}\label{main_8cpp_aa71e09c066a6e1173d1d4825faf26dd7}} 
+\index{main.\+cpp@{main.\+cpp}!check\+Prime\+Number@{check\+Prime\+Number}}
+\index{check\+Prime\+Number@{check\+Prime\+Number}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{check\+Prime\+Number()}{checkPrimeNumber()}}
+{\footnotesize\ttfamily bool check\+Prime\+Number (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Checking a number is a prime number or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & number will be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True\+: is a prime number $\vert$ False\+: is not a prime number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a786b5791dd8654700760b141e6e1f8cd}\label{main_8cpp_a786b5791dd8654700760b141e6e1f8cd}} 
+\index{main.\+cpp@{main.\+cpp}!cin\+Valid\+Number@{cin\+Valid\+Number}}
+\index{cin\+Valid\+Number@{cin\+Valid\+Number}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{cin\+Valid\+Number()}{cinValidNumber()}}
+{\footnotesize\ttfamily bool cin\+Valid\+Number (\begin{DoxyParamCaption}\item[{int \&}]{number }\end{DoxyParamCaption})}
+
+
+
+Checking the input from user. Only check integer data type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & store the input from user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a6317ba9d7cf2637f0bdd8bee612d1ff9}\label{main_8cpp_a6317ba9d7cf2637f0bdd8bee612d1ff9}} 
+\index{main.\+cpp@{main.\+cpp}!count\+Scores@{count\+Scores}}
+\index{count\+Scores@{count\+Scores}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{count\+Scores()}{countScores()}}
+{\footnotesize\ttfamily int count\+Scores (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+return the points for user depend on the time user enter their result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time in second from begin input to end input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The score 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a154f4813e0aef592577bdf7a17d9e574}\label{main_8cpp_a154f4813e0aef592577bdf7a17d9e574}} 
+\index{main.\+cpp@{main.\+cpp}!generation\+Operation@{generation\+Operation}}
+\index{generation\+Operation@{generation\+Operation}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{generation\+Operation()}{generationOperation()}}
+{\footnotesize\ttfamily int generation\+Operation (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Create a Mathematical operation, receive the input from user, calculate the time, and check the result from input of user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time of process 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+if the result of user is incorrect, the function will return the time = -\/1 
+\end{DoxyNote}
+\mbox{\Hypertarget{main_8cpp_af7bea7d5c8396af5f65b9505cfa9ad6c}\label{main_8cpp_af7bea7d5c8396af5f65b9505cfa9ad6c}} 
+\index{main.\+cpp@{main.\+cpp}!get\+Random\+Number@{get\+Random\+Number}}
+\index{get\+Random\+Number@{get\+Random\+Number}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Random\+Number()}{getRandomNumber()}}
+{\footnotesize\ttfamily int get\+Random\+Number (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Create a random number in range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & min value in range \\
+\hline
+{\em max} & max value in range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a63701da917ff4092541dd0054336c1f8}\label{main_8cpp_a63701da917ff4092541dd0054336c1f8}} 
+\index{main.\+cpp@{main.\+cpp}!get\+Random\+Operations@{get\+Random\+Operations}}
+\index{get\+Random\+Operations@{get\+Random\+Operations}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Random\+Operations()}{getRandomOperations()}}
+{\footnotesize\ttfamily char get\+Random\+Operations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a random operator from array char O\+P\+E\+R\+A\+T\+O\+RS\mbox{[}4\mbox{]} = \{\textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}\}. 
+
+\begin{DoxyReturn}{Returns}
+a character \textquotesingle{}+\textquotesingle{} or \textquotesingle{}-\/\textquotesingle{} or \textquotesingle{}$\ast$\textquotesingle{} or \textquotesingle{}/\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_aa9e2f4fa572de7c33b9f5827c8df80d9}\label{main_8cpp_aa9e2f4fa572de7c33b9f5827c8df80d9}} 
+\index{main.\+cpp@{main.\+cpp}!print\+Score\+From\+File@{print\+Score\+From\+File}}
+\index{print\+Score\+From\+File@{print\+Score\+From\+File}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{print\+Score\+From\+File()}{printScoreFromFile()}}
+{\footnotesize\ttfamily void print\+Score\+From\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{const int}]{size = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+
+
+Printing the high score that stored in file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of file stores the high score \\
+\hline
+{\em size} & the size of record will be stored in file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a642965152f937b2dde70b0419be7bcdf}\label{main_8cpp_a642965152f937b2dde70b0419be7bcdf}} 
+\index{main.\+cpp@{main.\+cpp}!save@{save}}
+\index{save@{save}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void save (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{\hyperlink{struct_scores}{Scores}}]{score,  }\item[{const int}]{size = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+
+
+Save the high score to file. The function will get the scores that are stored in file and check the current score. If the current score is greater than the other scores in file. The function will insert the current score and store those to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & the name of file stores the high score \\
+\hline
+{\em score} & the current score \\
+\hline
+{\em size} & the size of record will be stored in file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a036f38352ddc56207c1a0e198071cf04}\label{main_8cpp_a036f38352ddc56207c1a0e198071cf04}} 
+\index{main.\+cpp@{main.\+cpp}!start\+Game@{start\+Game}}
+\index{start\+Game@{start\+Game}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{start\+Game()}{startGame()}}
+{\footnotesize\ttfamily void start\+Game (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+start\+Game function is a function will execute the game and print the result of game when user win or lose the game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & current level of game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a890e4d32b647f2b9a858c89daf7cc89f}\label{main_8cpp_a890e4d32b647f2b9a858c89daf7cc89f}} 
+\index{main.\+cpp@{main.\+cpp}!F\+I\+L\+E\+\_\+\+N\+A\+ME@{F\+I\+L\+E\+\_\+\+N\+A\+ME}}
+\index{F\+I\+L\+E\+\_\+\+N\+A\+ME@{F\+I\+L\+E\+\_\+\+N\+A\+ME}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{F\+I\+L\+E\+\_\+\+N\+A\+ME}{FILE\_NAME}}
+{\footnotesize\ttfamily const string F\+I\+L\+E\+\_\+\+N\+A\+ME = \char`\"{}Scores.\+dat\char`\"{}}
+
+The name of file will save the high score \mbox{\Hypertarget{main_8cpp_a5419937581bd24dcb4b1389600d6545c}\label{main_8cpp_a5419937581bd24dcb4b1389600d6545c}} 
+\index{main.\+cpp@{main.\+cpp}!N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL@{N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL}}
+\index{N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL@{N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL}{NUMBER\_OF\_LEVEL}}
+{\footnotesize\ttfamily const int N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+V\+EL = 3}
+
+The number of level \mbox{\Hypertarget{main_8cpp_a6a0126712073a760a113eb6bf609a101}\label{main_8cpp_a6a0126712073a760a113eb6bf609a101}} 
+\index{main.\+cpp@{main.\+cpp}!O\+P\+E\+R\+A\+T\+O\+RS@{O\+P\+E\+R\+A\+T\+O\+RS}}
+\index{O\+P\+E\+R\+A\+T\+O\+RS@{O\+P\+E\+R\+A\+T\+O\+RS}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{O\+P\+E\+R\+A\+T\+O\+RS}{OPERATORS}}
+{\footnotesize\ttfamily const char O\+P\+E\+R\+A\+T\+O\+RS\mbox{[}4\mbox{]} = \{\textquotesingle{}+\textquotesingle{}, \textquotesingle{}-\/\textquotesingle{}, \textquotesingle{}$\ast$\textquotesingle{}, \textquotesingle{}/\textquotesingle{}\}}
+
+Contain 4 operators\+: add,sub,div,multi \mbox{\Hypertarget{main_8cpp_af57e50e3cf2cfbab4159f73ea5529bc7}\label{main_8cpp_af57e50e3cf2cfbab4159f73ea5529bc7}} 
+\index{main.\+cpp@{main.\+cpp}!R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL@{R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL}}
+\index{R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL@{R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL}{ROUND\_EACH\_LEVEL}}
+{\footnotesize\ttfamily const int R\+O\+U\+N\+D\+\_\+\+E\+A\+C\+H\+\_\+\+L\+E\+V\+EL = 10}
+
+Round for each level \mbox{\Hypertarget{main_8cpp_a932e57f367ea7a341192a5c6a9fa546a}\label{main_8cpp_a932e57f367ea7a341192a5c6a9fa546a}} 
+\index{main.\+cpp@{main.\+cpp}!S\+C\+O\+R\+E\+\_\+\+T\+I\+ME@{S\+C\+O\+R\+E\+\_\+\+T\+I\+ME}}
+\index{S\+C\+O\+R\+E\+\_\+\+T\+I\+ME@{S\+C\+O\+R\+E\+\_\+\+T\+I\+ME}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{S\+C\+O\+R\+E\+\_\+\+T\+I\+ME}{SCORE\_TIME}}
+{\footnotesize\ttfamily const int S\+C\+O\+R\+E\+\_\+\+T\+I\+ME\mbox{[}\hyperlink{main_8cpp_a85099db1e9276ead960f23d9255a3a4b}{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES}\mbox{]}\mbox{[}2\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{0, 10\},
+    \{1, 8\},
+    \{2, 6\},
+    \{3, 4\},
+    \{4, 2\}
+\}
+\end{DoxyCode}
+Array stored the points for each timing -\/ Description\+: \mbox{[}time\mbox{]}\mbox{[}points\mbox{]} \mbox{\Hypertarget{main_8cpp_a457a39c21d264e910760e1661c524c41}\label{main_8cpp_a457a39c21d264e910760e1661c524c41}} 
+\index{main.\+cpp@{main.\+cpp}!S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE@{S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE}}
+\index{S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE@{S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE}{SIZE\_SCORE\_TO\_FILE}}
+{\footnotesize\ttfamily const int S\+I\+Z\+E\+\_\+\+S\+C\+O\+R\+E\+\_\+\+T\+O\+\_\+\+F\+I\+LE = 5}
+
+Maximum recored scores to write down file \mbox{\Hypertarget{main_8cpp_a85099db1e9276ead960f23d9255a3a4b}\label{main_8cpp_a85099db1e9276ead960f23d9255a3a4b}} 
+\index{main.\+cpp@{main.\+cpp}!S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES@{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES}}
+\index{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES@{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES}{SIZE\_TIME\_SCORES}}
+{\footnotesize\ttfamily const int S\+I\+Z\+E\+\_\+\+T\+I\+M\+E\+\_\+\+S\+C\+O\+R\+ES = 5}
+
+How many level of points 

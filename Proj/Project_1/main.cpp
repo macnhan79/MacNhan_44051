@@ -21,7 +21,6 @@ using namespace std;
 int calcTime(int &);
 void callMainMenu(int level);
 bool cinValidNumber(int &);
-bool cinValidNumber(float &);
 int getRandomNumber(int min, int max);
 char getRandomOperations();
 int generationOperation(int level);
@@ -100,8 +99,8 @@ void startGame(int level) {
         cout << "GAME OVER!" << endl;
         cout << "Your scores: " << totalScores << endl;
         cout << "Enter your name: ";
-        cin >> name;
-        score.name = name;
+        cin >> score.name;
+        //score.name = name;
         //save score to file
         save(FILE_NAME, score, SIZE_SCORE_TO_FILE);
         cout << "Press [Enter] to play again.";
@@ -114,8 +113,8 @@ void startGame(int level) {
         cout << "Congratulation! You won!" << endl;
         cout << "Your scores: " << totalScores << endl;
         cout << "Enter your name: ";
-        cin >> name;
-        score.name = name;
+        cin >> score.name;
+        //score.name = name;
         save(FILE_NAME, score, SIZE_SCORE_TO_FILE);
         cin.ignore();
         cout << "Press [Enter] to play again.";
@@ -315,7 +314,7 @@ void callMainMenu(int level) {
         } while (!cinValidNumber(choice));
     } while (choice < 1 || choice > 3);
     switch (choice) {
-        //if choice == 1 --> start game
+            //if choice == 1 --> start game
         case 1:
             startGame(level);
             break;
@@ -354,11 +353,18 @@ void save(string fileName, Scores score, const int size = 5) {
     fstream in;
     //open document
     in.open("Scores.dat", ios::in | ios::binary);
+    //check exist , write 1 score and return
+    if (in.fail()) {
+        in.open("Scores.dat", ios::out | ios::binary);
+        score.rank = 1;
+        in.write(reinterpret_cast<char *> (&score), sizeof (score));
+        return;
+    }
     //read the first element
     in.read(reinterpret_cast<char *> (&sFile[0]), sizeof (sFile[0]));
     int i = 1;
     //loop to end file && < size
-    while (!in.eof() && i < size) {
+    while (!in.eof()) {
         //read next element
         in.read(reinterpret_cast<char *> (&sFile[i]), sizeof (sFile[i]));
         i++;
@@ -371,7 +377,6 @@ void save(string fileName, Scores score, const int size = 5) {
         if (!isChange) {
             //current score < new score
             if (sFile[j].scores < score.scores) {
-                score.rank = sFile[j].rank;
                 temp = sFile[j];
                 sFile[j] = score;
                 isChange = true;
@@ -386,9 +391,11 @@ void save(string fileName, Scores score, const int size = 5) {
     //write to file
     fstream out;
     out.open("Scores.dat", ios::out | ios::binary);
+    sFile[0].rank = 1;
     out.write(reinterpret_cast<char *> (&sFile[0]), sizeof (sFile[0]));
     i = 1;
     while (!out.eof() && i < size) {
+        sFile[i].rank = i + 1;
         out.write(reinterpret_cast<char *> (&sFile[i]), sizeof (sFile[i]));
         i++;
     }
@@ -404,17 +411,23 @@ void save(string fileName, Scores score, const int size = 5) {
  * \return none
  */
 void printScoreFromFile(string fileName, const int size = 5) {
+    cout << "Rank\t\tName\t\tScores" << endl;
+    cout << "--------------------------------------" << endl;
     Scores score;
     fstream file;
     file.open("Scores.dat", ios::in | ios::binary);
-    file.read(reinterpret_cast<char *> (&score), sizeof (score));
-    cout << "Rank\t\tName\t\tScores" << endl;
-    cout << "--------------------------------------" << endl;
-    while (!file.eof()) {
-        cout << score.rank << "\t\t" << score.name << "\t\t" << score.scores << endl;
+
+    if (file.fail()) {
+        file.open("Scores.dat", ios::out | ios::binary);
+        return;
+    } else {
         file.read(reinterpret_cast<char *> (&score), sizeof (score));
+        while (!file.eof()) {
+            cout << score.rank << "\t\t" << score.name << "\t\t" << score.scores << endl;
+            file.read(reinterpret_cast<char *> (&score), sizeof (score));
+        }
+        file.close();
     }
-    file.close();
 }
 
 /*!

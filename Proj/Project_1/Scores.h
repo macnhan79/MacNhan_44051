@@ -13,7 +13,7 @@
 
 struct Scores {
     int rank;/*!< The rank of user depend on score */
-    string name;/*!< Name of user */
+    char name[100];/*!< Name of user */
     int scores;/*!< Score of user */
 };
 
