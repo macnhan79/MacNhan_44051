@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>BaseMap.h</itemPath>
+      <itemPath>Fruit.h</itemPath>
+      <itemPath>ListNode.h</itemPath>
+      <itemPath>Map1.h</itemPath>
+      <itemPath>Map2.h</itemPath>
+      <itemPath>Map3.h</itemPath>
+      <itemPath>Object.h</itemPath>
+      <itemPath>Scores.h</itemPath>
+      <itemPath>Snake.h</itemPath>
+      <itemPath>Walls.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>BaseMap.cpp</itemPath>
+      <itemPath>Fruit.cpp</itemPath>
+      <itemPath>ListNode.cpp</itemPath>
+      <itemPath>Map1.cpp</itemPath>
+      <itemPath>Map2.cpp</itemPath>
+      <itemPath>Map3.cpp</itemPath>
+      <itemPath>Object.cpp</itemPath>
+      <itemPath>Snake.cpp</itemPath>
+      <itemPath>Walls.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>-lopengl32 -lglu32 -lgdi32</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="BaseMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Fruit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Fruit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Object.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Object.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Scores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Snake.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Snake.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Walls.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Walls.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="BaseMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseMap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Fruit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Fruit.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ListNode.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ListNode.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Map3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Map3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Object.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Object.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Scores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Snake.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Snake.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Walls.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Walls.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

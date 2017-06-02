@@ -1,0 +1,224 @@
+\hypertarget{class_snake}{}\section{Snake Class Reference}
+\label{class_snake}\index{Snake@{Snake}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_snake_af0cc1dc5acd878a6530198ba11d701f4}\label{class_snake_af0cc1dc5acd878a6530198ba11d701f4}} 
+enum {\bfseries move\+State} \{ {\bfseries UP}, 
+{\bfseries D\+O\+WN}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_snake_aa9cbcdb4b25d84cbf83509039cac8d01}{Snake} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \hyperlink{class_snake}{Snake} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_snake_ac9f00db4b693de3c552a0ae7275c8412}{init} ()
+\begin{DoxyCompactList}\small\item\em Create value for snake. \end{DoxyCompactList}\item 
+void \hyperlink{class_snake_a5aea260c328ba4f8701539eab08283d9}{move} ()
+\begin{DoxyCompactList}\small\item\em Move snake to other position. \end{DoxyCompactList}\item 
+int \hyperlink{class_snake_a9dd0a8a2a763668e12646385da8280e2}{size} ()
+\begin{DoxyCompactList}\small\item\em The size of snake. \end{DoxyCompactList}\item 
+void \hyperlink{class_snake_a2940bb3101863ab8a02a8a396c6552f2}{insert\+Back} ()
+\begin{DoxyCompactList}\small\item\em Insert node to back of list. \end{DoxyCompactList}\item 
+void \hyperlink{class_snake_aef36368de7f3f811d424e3ae02f2393d}{delete\+Back} ()
+\begin{DoxyCompactList}\small\item\em Delete node at back of list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_snake_a06a611ba3edd353051e4dcd59642ace0}\label{class_snake_a06a611ba3edd353051e4dcd59642ace0}} 
+void {\bfseries display\+List} () const
+\item 
+\hyperlink{class_list_node}{List\+Node} $\ast$ \hyperlink{class_snake_a69f6fbdc2ef89a8d8881dbfdbca2260f}{get\+Head} () const
+\begin{DoxyCompactList}\small\item\em Get list head pointer. \end{DoxyCompactList}\item 
+void \hyperlink{class_snake_a1d32911132c48ffb2cbe6752b5100405}{set\+Max\+Speed} (int max\+Speed)
+\begin{DoxyCompactList}\small\item\em Set value of max speed. \end{DoxyCompactList}\item 
+int \hyperlink{class_snake_ae70820c279a79caae3dcfe4cbaa4b747}{get\+Max\+Speed} () const
+\begin{DoxyCompactList}\small\item\em Get max speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+move\+State \hyperlink{class_snake_a55f2ac9d5eb97c9f86b001d47ce0e8dc}{state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_snake_aa9cbcdb4b25d84cbf83509039cac8d01}\label{class_snake_aa9cbcdb4b25d84cbf83509039cac8d01}} 
+\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{Snake()}{Snake()}}
+{\footnotesize\ttfamily Snake\+::\+Snake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor of \hyperlink{class_snake}{Snake} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_snake_aef36368de7f3f811d424e3ae02f2393d}\label{class_snake_aef36368de7f3f811d424e3ae02f2393d}} 
+\index{Snake@{Snake}!delete\+Back@{delete\+Back}}
+\index{delete\+Back@{delete\+Back}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{delete\+Back()}{deleteBack()}}
+{\footnotesize\ttfamily void Snake\+::delete\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete node at back of list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_a69f6fbdc2ef89a8d8881dbfdbca2260f}\label{class_snake_a69f6fbdc2ef89a8d8881dbfdbca2260f}} 
+\index{Snake@{Snake}!get\+Head@{get\+Head}}
+\index{get\+Head@{get\+Head}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{get\+Head()}{getHead()}}
+{\footnotesize\ttfamily \hyperlink{class_list_node}{List\+Node} $\ast$ Snake\+::get\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get list head pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List head pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_ae70820c279a79caae3dcfe4cbaa4b747}\label{class_snake_ae70820c279a79caae3dcfe4cbaa4b747}} 
+\index{Snake@{Snake}!get\+Max\+Speed@{get\+Max\+Speed}}
+\index{get\+Max\+Speed@{get\+Max\+Speed}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{get\+Max\+Speed()}{getMaxSpeed()}}
+{\footnotesize\ttfamily int Snake\+::get\+Max\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get max speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+max\+Speed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_ac9f00db4b693de3c552a0ae7275c8412}\label{class_snake_ac9f00db4b693de3c552a0ae7275c8412}} 
+\index{Snake@{Snake}!init@{init}}
+\index{init@{init}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Snake\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create value for snake. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_a2940bb3101863ab8a02a8a396c6552f2}\label{class_snake_a2940bb3101863ab8a02a8a396c6552f2}} 
+\index{Snake@{Snake}!insert\+Back@{insert\+Back}}
+\index{insert\+Back@{insert\+Back}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{insert\+Back()}{insertBack()}}
+{\footnotesize\ttfamily void Snake\+::insert\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Insert node to back of list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_a5aea260c328ba4f8701539eab08283d9}\label{class_snake_a5aea260c328ba4f8701539eab08283d9}} 
+\index{Snake@{Snake}!move@{move}}
+\index{move@{move}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Snake\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Move snake to other position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_a1d32911132c48ffb2cbe6752b5100405}\label{class_snake_a1d32911132c48ffb2cbe6752b5100405}} 
+\index{Snake@{Snake}!set\+Max\+Speed@{set\+Max\+Speed}}
+\index{set\+Max\+Speed@{set\+Max\+Speed}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{set\+Max\+Speed()}{setMaxSpeed()}}
+{\footnotesize\ttfamily void Snake\+::set\+Max\+Speed (\begin{DoxyParamCaption}\item[{int}]{max\+Speed }\end{DoxyParamCaption})}
+
+
+
+Set value of max speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Speed} & -\/ value of max speed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_snake_a9dd0a8a2a763668e12646385da8280e2}\label{class_snake_a9dd0a8a2a763668e12646385da8280e2}} 
+\index{Snake@{Snake}!size@{size}}
+\index{size@{size}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Snake\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The size of snake. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of snake 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_snake_a55f2ac9d5eb97c9f86b001d47ce0e8dc}\label{class_snake_a55f2ac9d5eb97c9f86b001d47ce0e8dc}} 
+\index{Snake@{Snake}!state@{state}}
+\index{state@{state}!Snake@{Snake}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily move\+State Snake\+::state}
+
+Direction of snake 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+R\+C\+C/\+C\+I\+S17\+A/\+Mac\+Nhan\+\_\+44051/\+Proj/\+Project\+\_\+2/\+Project2/Snake.\+h\item 
+D\+:/\+R\+C\+C/\+C\+I\+S17\+A/\+Mac\+Nhan\+\_\+44051/\+Proj/\+Project\+\_\+2/\+Project2/Snake.\+cpp\end{DoxyCompactItemize}
